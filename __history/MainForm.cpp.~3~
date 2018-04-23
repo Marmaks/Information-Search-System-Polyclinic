@@ -222,7 +222,7 @@ void __fastcall TForm1::ButtonDoneClick(TObject *Sender)
 
 void __fastcall TForm1::N4Click(TObject *Sender)
 {
-	if (changes) {
+	if (count_patient > 0 && changes) {
 		if (MessageBox(0, L"Сохранить файл?", L"Подтвердите сохранение", MB_YESNO) == IDYES) {
 			N5->Click();
 		}
@@ -297,7 +297,7 @@ void __fastcall TForm1::N6Click(TObject *Sender)
 
 void __fastcall TForm1::N7Click(TObject *Sender)
 {
-	if (changes) {
+	if (count_patient > 0 && changes) {
 		if (MessageBox(0, L"Сохранить изменения в файле?", L"Подтвердите сохранение", MB_YESNO) == IDYES) {
 			N5->Click();
 		}
