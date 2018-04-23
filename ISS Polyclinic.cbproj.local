@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.351,d:\embarcadero\studio\17.0\ObjRepos\EN\Cpp\okcancl2.CPP=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.652,=d:\embarcadero\studio\17.0\ObjRepos\EN\Cpp\okcancl2.CPP</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.029,=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\OKCANCL2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.700,C:\Users\Максим\Documents\Embarcadero\Studio\Projects\Unit1.h=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\MainForm.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.700,C:\Users\Максим\Documents\Embarcadero\Studio\Projects\Unit1.cpp=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\MainForm.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.790,=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.732,=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.127,=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.818,C:\Users\Максим\Documents\Embarcadero\Studio\Projects\Unit2.dfm=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\HELP.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.492,C:\Users\Максим\Documents\Embarcadero\Studio\Projects\Patient.h=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\File1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.700,=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\OKCNHLP2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.079,C:\Users\Максим\Documents\Embarcadero\Studio\Projects\Project1.cbproj=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.178,C:\Users\Максим\Documents\Embarcadero\Studio\Projects\Project1.cbproj=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\CourseWork.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.818,C:\Users\Максим\Documents\Embarcadero\Studio\Projects\Unit2.h=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\HELP.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.700,C:\Users\Максим\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\MainForm.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.439,=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\ABOUT.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.735,=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.422,=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.139,C:\Users\Максим\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\CourseWorkPCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.667,=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.849,=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\Unit3.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.818,C:\Users\Максим\Documents\Embarcadero\Studio\Projects\Unit2.cpp=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\HELP.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.211,C:\Users\Максим\Documents\Embarcadero\Studio\Projects\Patient.cpp=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.362,=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\File1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.363,=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.610,=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.022,=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>2018.04.23 22:09:31.695,C:\Users\Максим\Documents\Embarcadero\Studio\Projects\CourseWork\ISS "P"PCH1.h=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\CourseWork\CourseWorkPCH1.h</Transaction>
+    <Transaction>2018.04.23 22:09:31.709,C:\Users\Максим\Documents\Embarcadero\Studio\Projects\CourseWork\CourseWorkPCH1.h=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\CourseWork\ISS "P"PCH1.h</Transaction>
+    <Transaction>2018.04.23 22:09:33.715,C:\Users\Максим\Documents\Embarcadero\Studio\Projects\CourseWork\ISS "P".cbproj=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\CourseWork\CourseWork.cbproj</Transaction>
+    <Transaction>2018.04.23 22:09:49.566,C:\Users\Максим\Documents\Embarcadero\Studio\Projects\CourseWork\ISS "Polyclinic".cbproj=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\CourseWork\ISS "P".cbproj</Transaction>
+    <Transaction>2018.04.23 22:10:43.634,C:\Users\Максим\Documents\Embarcadero\Studio\Projects\CourseWork\ISS Polyclinic.cbproj=C:\Users\Максим\Documents\Embarcadero\Studio\Projects\CourseWork\ISS "Polyclinic".cbproj</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="MainForm.cpp"/>
+    <File Path="MainForm.cpp"/>
+    <File Path="MainForm.dfm"/>
+    <File Path="MainForm.h"/>
+    <File Path="Patient.cpp"/>
+    <File Path="Patient.h"/>
+    <File Path="ABOUT.cpp"/>
+    <File Path="ABOUT.cpp"/>
+    <File Path="ABOUT.dfm"/>
+    <File Path="ABOUT.h"/>
+    <File Path="ISS Polyclinic.cpp"/>
+  </ProjectSortOrder>
+</BorlandProject>
