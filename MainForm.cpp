@@ -64,7 +64,6 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 		StringGrid->ColWidths[i] = columnSize[i];
 	}
 
-
 	StatusBar->Panels->Items[0]->Text = "Пациентов в базе: 0";
 	RadioGroup->ItemIndex = 0;
 }
@@ -101,7 +100,7 @@ void __fastcall TForm1::ButtonAddClick(TObject *Sender)
 		secondName[0] = toupper(secondName[0]);
 		firstName[0] = toupper(firstName[0]);
 		thirdName[0] = toupper(thirdName[0]);
-		patient_base.push_back(Patient(++current_id,  firstName, secondName, thirdName, StrToInt(EditHeight->Text), StrToInt(EditWeight->Text)));
+		patient_base.push_back(Patient(++current_id,  firstName, secondName, thirdName, StrToFloat(EditHeight->Text), StrToFloat(EditWeight->Text)));
 		count_patient++;
 		EditSecondName->Clear();
 		EditFirstName->Clear();
@@ -125,8 +124,8 @@ void __fastcall TForm1::ButtonUpdateClick(TObject *Sender)
 		StringGrid->Cells[1][i + 1] = patient_base[i].GetSecondName().c_str();
 		StringGrid->Cells[2][i + 1] = patient_base[i].GetFirstName().c_str();
 		StringGrid->Cells[3][i + 1] = patient_base[i].GetThirdName().c_str();
-		StringGrid->Cells[4][i + 1] = IntToStr(patient_base[i].GetHeight());
-		StringGrid->Cells[5][i + 1] = IntToStr(patient_base[i].GetWeight());
+		StringGrid->Cells[4][i + 1] = FloatToStr(patient_base[i].GetHeight());
+		StringGrid->Cells[5][i + 1] = FloatToStr(patient_base[i].GetWeight());
 	}
 
 	StatusBar->Panels->Items[0]->Text = "Пациентов в базе: " + IntToStr(count_patient);
@@ -152,35 +151,48 @@ void __fastcall TForm1::StringGridSelectCell(TObject *Sender, int ACol, int ARow
 		StringGrid->Options >> goEditing;
 	}
 	else {
-		StringGrid->Options << goEditing;
+		if (ACol == 0) {
+			 StringGrid->Options >> goEditing;
+		}
+		else {
+			StringGrid->Options << goEditing;
+		}
 		ButtonDelete->Enabled = true;
 	}
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::StringGridSetEditText(TObject *Sender, int ACol, int ARow,
-          const UnicodeString Value)
+		  const UnicodeString Value)
 {
 	changes = true;
-	ButtonApplyChanges->Enabled = true;
+	ButtonApplyChanges->Click();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::StringGridExit(TObject *Sender)
+{
+	ButtonUpdate->Click();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::ButtonApplyChangesClick(TObject *Sender)
 {
+	setlocale(LC_ALL, "Russian");
 	int i;
 	for (i = 0; i < count_patient; i++) {
 		ID = StrToInt(StringGrid->Cells[0][i + 1]);
 		secondName = AnsiString(StringGrid->Cells[1][i + 1]).c_str();
 		firstName = AnsiString(StringGrid->Cells[2][i + 1]).c_str();
 		thirdName = AnsiString(StringGrid->Cells[3][i + 1]).c_str();
-		height = StrToInt(StringGrid->Cells[4][i + 1]);
-		weight = StrToInt(StringGrid->Cells[5][i + 1]);
+        secondName[0] = toupper(secondName[0]);
+		firstName[0] = toupper(firstName[0]);
+		thirdName[0] = toupper(thirdName[0]);
+		height = StrToFloat(StringGrid->Cells[4][i + 1]);
+		weight = StrToFloat(StringGrid->Cells[5][i + 1]);
 
 		patient_base[i].SetPatient(ID, firstName, secondName, thirdName, height, weight);
 	}
-
-	ButtonApplyChanges->Enabled = false;
 }
 //---------------------------------------------------------------------------
 
@@ -379,8 +391,26 @@ void __fastcall TForm1::EditSecondNameKeyPress(TObject *Sender, System::WideChar
 
 void __fastcall TForm1::EditHeightKeyPress(TObject *Sender, System::WideChar &Key)
 {
-	if(!isdigit(Key) && Key != VK_BACK){
-		Key = 0;
+	String dsstr = FormatSettings.DecimalSeparator;
+	if(!isdigit(Key) &&  Key != VK_BACK){
+		if (Key == '.' && dsstr=="." || Key == ',' && dsstr==",") {
+			if (EditHeight->Text.Pos(Key)!=0) {
+				Key = 0;
+			}
+		} else {Key = 0;}
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::EditWeightKeyPress(TObject *Sender, System::WideChar &Key)
+{
+	String dsstr = FormatSettings.DecimalSeparator;
+	if(!isdigit(Key) &&  Key != VK_BACK){
+		if (Key == '.' && dsstr=="." || Key == ',' && dsstr==",") {
+			if (EditWeight->Text.Pos(Key)!=0) {
+				Key = 0;
+			}
+		} else {Key = 0;}
 	}
 }
 //---------------------------------------------------------------------------
@@ -391,6 +421,27 @@ void __fastcall TForm1::FormCloseQuery(TObject *Sender, bool &CanClose)
 		CanClose=true;
 	}
 	else CanClose=false;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::StringGridKeyPress(TObject *Sender, System::WideChar &Key)
+{
+	String dsstr = FormatSettings.DecimalSeparator;
+	if (StringGrid->Col == 4 || StringGrid->Col == 5) {
+		String dstr = FormatSettings.DecimalSeparator;
+		if(!isdigit(Key) &&  Key != VK_BACK){
+			if (Key == '.' && dsstr=="." || Key == ',' && dsstr==",") {
+				if (StringGrid->Cells[StringGrid->Col][StringGrid->Row].Pos(Key)!=0) {
+					Key = 0;
+				}
+			} else {Key = 0;}
+		}
+	}
+	else {
+    	if(!iswalpha(Key) && Key != VK_BACK){
+			Key = 0;
+		}
+	}
 }
 //---------------------------------------------------------------------------
 

@@ -71,6 +71,9 @@ __published:	// IDE-managed Components
 	void __fastcall EditSecondNameKeyPress(TObject *Sender, System::WideChar &Key);
 	void __fastcall EditHeightKeyPress(TObject *Sender, System::WideChar &Key);
 	void __fastcall FormCloseQuery(TObject *Sender, bool &CanClose);
+	void __fastcall EditWeightKeyPress(TObject *Sender, System::WideChar &Key);
+	void __fastcall StringGridKeyPress(TObject *Sender, System::WideChar &Key);
+	void __fastcall StringGridExit(TObject *Sender);
 
 private:	// User declarations
 public:		// User declarations

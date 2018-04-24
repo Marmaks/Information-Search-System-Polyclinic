@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = #1048#1055#1057' "'#1055#1086#1083#1080#1082#1083#1080#1085#1080#1082#1072'" - '#1055#1072#1094#1080#1077#1085#1090#1099
-  ClientHeight = 362
+  ClientHeight = 361
   ClientWidth = 960
   Color = clBtnFace
   Constraints.MaxWidth = 976
@@ -3072,7 +3072,7 @@ object Form1: TForm1
   OnCreate = FormCreate
   DesignSize = (
     960
-    362)
+    361)
   PixelsPerInch = 96
   TextHeight = 13
   object Label7: TLabel
@@ -3158,7 +3158,7 @@ object Form1: TForm1
       Top = 181
       Width = 177
       Height = 21
-      MaxLength = 3
+      MaxLength = 5
       TabOrder = 3
       OnKeyPress = EditHeightKeyPress
     end
@@ -3167,9 +3167,9 @@ object Form1: TForm1
       Top = 227
       Width = 177
       Height = 21
-      MaxLength = 3
+      MaxLength = 5
       TabOrder = 4
-      OnKeyPress = EditHeightKeyPress
+      OnKeyPress = EditWeightKeyPress
     end
     object EditThirdName: TEdit
       Left = 32
@@ -3183,23 +3183,24 @@ object Form1: TForm1
   end
   object StringGrid: TStringGrid
     Left = 8
-    Top = 8
+    Top = 7
     Width = 480
-    Height = 203
+    Height = 267
     Anchors = [akLeft, akTop, akBottom]
     ColCount = 6
     FixedCols = 0
-    RowCount = 1
-    FixedRows = 0
-    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing]
+    RowCount = 2
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing]
     TabOrder = 0
     OnDrawCell = StringGridDrawCell
+    OnExit = StringGridExit
+    OnKeyPress = StringGridKeyPress
     OnSelectCell = StringGridSelectCell
     OnSetEditText = StringGridSetEditText
   end
   object ButtonUpdate: TButton
-    Left = 215
-    Top = 216
+    Left = 8
+    Top = 311
     Width = 75
     Height = 25
     Caption = 'Update'
@@ -3209,7 +3210,7 @@ object Form1: TForm1
   end
   object ButtonDelete: TButton
     Left = 373
-    Top = 217
+    Top = 280
     Width = 115
     Height = 25
     Anchors = [akLeft, akBottom]
@@ -3220,19 +3221,18 @@ object Form1: TForm1
   end
   object ButtonApplyChanges: TButton
     Left = 8
-    Top = 217
+    Top = 280
     Width = 129
     Height = 25
     Anchors = [akLeft, akBottom]
     Caption = #1055#1088#1080#1084#1077#1085#1080#1090#1100' '#1080#1079#1084#1077#1085#1077#1085#1080#1103
-    Enabled = False
     TabOrder = 4
     Visible = False
     OnClick = ButtonApplyChangesClick
   end
   object StatusBar: TStatusBar
     Left = 0
-    Top = 343
+    Top = 342
     Width = 960
     Height = 19
     Panels = <
@@ -3284,7 +3284,7 @@ object Form1: TForm1
   end
   object MainMenu: TMainMenu
     Left = 240
-    Top = 248
+    Top = 288
     object N3: TMenuItem
       Caption = #1060#1072#1081#1083
       object N7: TMenuItem
@@ -3319,11 +3319,11 @@ object Form1: TForm1
   object OpenDialog: TOpenDialog
     Filter = #1060#1072#1081#1083#1099' '#1073#1072#1079#1099' '#1076#1072#1085#1085#1099#1093'|*.patient'
     Left = 184
-    Top = 280
+    Top = 296
   end
   object SaveDialog: TSaveDialog
     Filter = #1060#1072#1081#1083#1099' '#1073#1072#1079#1099' '#1076#1072#1085#1085#1099#1093'|*.patient'
-    Left = 304
-    Top = 280
+    Left = 296
+    Top = 288
   end
 end

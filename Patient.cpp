@@ -9,7 +9,7 @@ using namespace std;
 	}
 
 	//Builder
-	Patient::Patient(int id, string fn, string sn, string tn, int h, int w) {
+	Patient::Patient(int id, string fn, string sn, string tn, float h, float w) {
 		ID = id;
 		firstName = fn;
 		secondName = sn;
@@ -19,7 +19,7 @@ using namespace std;
 	}
 
 	//MainSetter
-	void Patient::SetPatient(int id, string fn, string sn, string tn, int h, int w) {
+	void Patient::SetPatient(int id, string fn, string sn, string tn, float h, float w) {
 		ID = id;
 		firstName = fn;
 		secondName = sn;
@@ -32,10 +32,10 @@ using namespace std;
 	int Patient::GetID() {
 		return ID;
 	}
-	int Patient::GetHeight() {
+	float Patient::GetHeight() {
 		return height;
 	}
-	int Patient::GetWeight() {
+	float Patient::GetWeight() {
 		return weight;
 	}
 	string Patient::GetFirstName() {

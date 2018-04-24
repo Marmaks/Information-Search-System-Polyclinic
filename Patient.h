@@ -7,8 +7,8 @@ class Patient
 {
 private:
 	int ID;
-	int height;
-	int weight;
+	float height;
+	float weight;
 	string firstName;
 	string secondName;
 	string thirdName;
@@ -17,15 +17,15 @@ public:
 	Patient();
 
 	//Builder
-	Patient(int, string, string, string, int, int);
+	Patient(int, string, string, string, float, float);
 
 	//MainSetter
-	void SetPatient(int, string, string, string, int, int);
+	void SetPatient(int, string, string, string, float, float);
 
 	//Getters
 	int GetID();
-	int GetHeight();
-	int GetWeight();
+	float GetHeight();
+	float GetWeight();
 	string GetFirstName();
 	string GetSecondName();
 	string GetThirdName ();
