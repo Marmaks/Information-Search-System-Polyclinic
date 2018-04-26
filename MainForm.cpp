@@ -93,6 +93,7 @@ void __fastcall TForm1::ButtonDeleteClick(TObject *Sender)
 void __fastcall TForm1::ButtonAddClick(TObject *Sender)
 {
 	setlocale(LC_ALL, "Russian");
+	ButtonDone->Click();
 	if (!(EditSecondName->Text.IsEmpty()) && !(EditFirstName->Text.IsEmpty()) && !(EditThirdName->Text.IsEmpty()) && !(EditHeight->Text.IsEmpty()) && !(EditWeight->Text.IsEmpty())){
 		secondName = AnsiString(EditSecondName->Text).c_str();
 		firstName = AnsiString(EditFirstName->Text).c_str();
@@ -119,13 +120,16 @@ void __fastcall TForm1::ButtonUpdateClick(TObject *Sender)
 {
 	int i, j;
 	StringGrid->RowCount = count_patient + 1;
+	if (count_patient > 0) {
+		StringGrid->FixedRows = 1;
+	}
 	for (i = 0; i < count_patient; i++) {
 		StringGrid->Cells[0][i + 1] = IntToStr(patient_base[i].GetID());
 		StringGrid->Cells[1][i + 1] = patient_base[i].GetSecondName().c_str();
 		StringGrid->Cells[2][i + 1] = patient_base[i].GetFirstName().c_str();
 		StringGrid->Cells[3][i + 1] = patient_base[i].GetThirdName().c_str();
-		StringGrid->Cells[4][i + 1] = FloatToStr(patient_base[i].GetHeight());
-		StringGrid->Cells[5][i + 1] = FloatToStr(patient_base[i].GetWeight());
+		StringGrid->Cells[4][i + 1] = FormatFloat("###.#", patient_base[i].GetHeight());
+		StringGrid->Cells[5][i + 1] = FormatFloat("###.#", patient_base[i].GetWeight());
 	}
 
 	StatusBar->Panels->Items[0]->Text = "Пациентов в базе: " + IntToStr(count_patient);
@@ -202,17 +206,11 @@ void __fastcall TForm1::ButtonSearchClick(TObject *Sender)
 	string temp;
 	int findCol;
 	if (EditSearchValue->Text != "") {
-		switch (RadioGroup->ItemIndex) {
-			case 0: findCol = 0; break;
-			case 1:
-				findCol = 1;
-				temp = AnsiString(EditSearchValue->Text).c_str();
-				temp[0] = toupper(temp[0]);
-				EditSearchValue->Text = temp.c_str();
-				break;
-			case 2: findCol = 4; break;
-			case 3: findCol = 5; break;
-			default: findCol = 0; break;
+		findCol = RadioGroup->ItemIndex;
+		if (findCol == 1 || findCol == 2 || findCol == 3) {
+			temp = AnsiString(EditSearchValue->Text).c_str();
+			temp[0] = toupper(temp[0]);
+			EditSearchValue->Text = temp.c_str();
 		}
 		for (i = 0; i < count_patient; i++) {
 			if (StringGrid->Cells[findCol][i + 1] != EditSearchValue->Text) {

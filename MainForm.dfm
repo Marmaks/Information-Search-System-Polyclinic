@@ -3077,7 +3077,7 @@ object Form1: TForm1
   TextHeight = 13
   object Label7: TLabel
     Left = 767
-    Top = 159
+    Top = 235
     Width = 90
     Height = 13
     Caption = #1047#1085#1072#1095#1077#1085#1080#1077' '#1087#1086#1080#1089#1082#1072':'
@@ -3086,7 +3086,7 @@ object Form1: TForm1
     Left = 504
     Top = 8
     Width = 241
-    Height = 297
+    Height = 298
     BiDiMode = bdLeftToRight
     Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1087#1072#1094#1080#1077#1085#1090#1072
     ParentBiDiMode = False
@@ -3248,18 +3248,20 @@ object Form1: TForm1
     Left = 767
     Top = 8
     Width = 177
-    Height = 145
+    Height = 221
     Caption = #1055#1086#1080#1089#1082' '#1087#1086' '#1073#1072#1079#1077
     Items.Strings = (
       #1055#1086#1080#1089#1082' '#1087#1086' ID '#1087#1072#1094#1080#1077#1085#1090#1072
       #1055#1086#1080#1089#1082' '#1087#1086' '#1092#1072#1084#1080#1083#1080#1080
+      #1055#1086#1080#1089#1082' '#1087#1086' '#1080#1084#1077#1085#1080
+      #1087#1086#1080#1089#1082' '#1087#1086' '#1086#1090#1095#1077#1089#1090#1074#1091
       #1055#1086#1080#1089#1082' '#1087#1086' '#1088#1086#1089#1090#1091
       #1055#1086#1080#1089#1082' '#1087#1086' '#1074#1077#1089#1091)
     TabOrder = 6
   end
   object ButtonSearch: TButton
     Left = 767
-    Top = 205
+    Top = 281
     Width = 65
     Height = 25
     Caption = #1055#1086#1080#1089#1082
@@ -3268,14 +3270,14 @@ object Form1: TForm1
   end
   object EditSearchValue: TEdit
     Left = 767
-    Top = 178
+    Top = 254
     Width = 177
     Height = 21
     TabOrder = 8
   end
   object ButtonDone: TButton
     Left = 869
-    Top = 205
+    Top = 281
     Width = 75
     Height = 25
     Caption = #1043#1086#1090#1086#1074#1086
