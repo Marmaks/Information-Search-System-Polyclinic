@@ -176,6 +176,7 @@ void __fastcall TForm1::StringGridSetEditText(TObject *Sender, int ACol, int ARo
 
 void __fastcall TForm1::StringGridExit(TObject *Sender)
 {
+	ButtonApplyChanges->Click();
 	ButtonUpdate->Click();
 }
 //---------------------------------------------------------------------------
@@ -183,19 +184,21 @@ void __fastcall TForm1::StringGridExit(TObject *Sender)
 void __fastcall TForm1::ButtonApplyChangesClick(TObject *Sender)
 {
 	setlocale(LC_ALL, "Russian");
-	int i;
+	int i, j;
 	for (i = 0; i < count_patient; i++) {
-		ID = StrToInt(StringGrid->Cells[0][i + 1]);
-		secondName = AnsiString(StringGrid->Cells[1][i + 1]).c_str();
-		firstName = AnsiString(StringGrid->Cells[2][i + 1]).c_str();
-		thirdName = AnsiString(StringGrid->Cells[3][i + 1]).c_str();
-        secondName[0] = toupper(secondName[0]);
-		firstName[0] = toupper(firstName[0]);
-		thirdName[0] = toupper(thirdName[0]);
-		height = StrToFloat(StringGrid->Cells[4][i + 1]);
-		weight = StrToFloat(StringGrid->Cells[5][i + 1]);
+		if (StringGrid->Cells[1][i + 1] != "" && StringGrid->Cells[2][i + 1] != "" && StringGrid->Cells[3][i + 1] != "" && StringGrid->Cells[4][i + 1] != "" && StringGrid->Cells[5][i + 1] != "") {
+			ID = StrToInt(StringGrid->Cells[0][i + 1]);
+			secondName = AnsiString(StringGrid->Cells[1][i + 1]).c_str();
+			firstName = AnsiString(StringGrid->Cells[2][i + 1]).c_str();
+			thirdName = AnsiString(StringGrid->Cells[3][i + 1]).c_str();
+			secondName[0] = toupper(secondName[0]);
+			firstName[0] = toupper(firstName[0]);
+			thirdName[0] = toupper(thirdName[0]);
+			height = StrToFloat(StringGrid->Cells[4][i + 1]);
+			weight = StrToFloat(StringGrid->Cells[5][i + 1]);
 
-		patient_base[i].SetPatient(ID, firstName, secondName, thirdName, height, weight);
+			patient_base[i].SetPatient(ID, firstName, secondName, thirdName, height, weight);
+		}
 	}
 }
 //---------------------------------------------------------------------------
@@ -230,7 +233,7 @@ void __fastcall TForm1::ButtonDoneClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::N4Click(TObject *Sender)
+void __fastcall TForm1::NButtonOpenClick(TObject *Sender)
 {
 	if (count_patient > 0 && changes) {
 		if (MessageBox(0, L"Сохранить файл?", L"Подтвердите сохранение", MB_YESNO) == IDYES) {
@@ -241,20 +244,19 @@ void __fastcall TForm1::N4Click(TObject *Sender)
 		ifstream fin;
 		fin.open(AnsiString(OpenDialog->FileName).c_str());
 		if (!fin.is_open()) {
-			MessageBox(0, L"Не удалось открыть файд", L"Ошибка чтения файла", MB_OK);
+			MessageBox(0, L"Не удалось открыть файл", L"Ошибка чтения файла", MB_OK);
 		}
 		else {
 			if (fin.read((char*)&count_patient, sizeof(int))) {
 				fin >> current_id;
 				for (i = 0; i < count_patient; i++) {
-				patient_base.push_back(Patient());
-				fin >> ID;
-				fin >> firstName;
-				fin >> secondName;
-				fin >> thirdName;
-				fin >> height;
-				fin >> weight;
-				patient_base[i].SetPatient(ID, firstName, secondName, thirdName, height, weight);
+					fin >> ID;
+					fin >> firstName;
+					fin >> secondName;
+					fin >> thirdName;
+					fin >> height;
+					fin >> weight;
+					patient_base.push_back(Patient(ID, firstName, secondName, thirdName, height, weight));
 				}
 			}
 			else {
@@ -277,7 +279,7 @@ void __fastcall TForm1::N6Click(TObject *Sender)
 		fout.open(AnsiString(SaveDialog->FileName + ".patient").c_str());
 
 		if (!fout.is_open()) {
-			MessageBox(0, L"Не удалось открыть файд", L"Ошибка чтения файла", MB_OK);
+			MessageBox(0, L"Не удалось открыть файл", L"Ошибка чтения файла", MB_OK);
 		}
 		else {
 			fout.write((char*)&count_patient, sizeof(int));
@@ -338,7 +340,7 @@ void __fastcall TForm1::N5Click(TObject *Sender)
 		fout.open(AnsiString(StatusBar->Panels->Items[1]->Text).c_str());
 
 		if (!fout.is_open()) {
-			MessageBox(0, L"Не удалось открыть файд", L"Ошибка чтения файла", MB_OK);
+			MessageBox(0, L"Не удалось открыть файл", L"Ошибка чтения файла", MB_OK);
 		}
 		else {
 			fout.write((char*)&count_patient, sizeof(int));

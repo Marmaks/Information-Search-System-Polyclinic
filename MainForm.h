@@ -43,7 +43,7 @@ __published:	// IDE-managed Components
 	TLabel *Label7;
 	TButton *ButtonDone;
 	TMenuItem *N3;
-	TMenuItem *N4;
+	TMenuItem *NButtonOpen;
 	TMenuItem *N5;
 	TMenuItem *N6;
 	TOpenDialog *OpenDialog;
@@ -62,7 +62,7 @@ __published:	// IDE-managed Components
 	void __fastcall ButtonApplyChangesClick(TObject *Sender);
 	void __fastcall ButtonSearchClick(TObject *Sender);
 	void __fastcall ButtonDoneClick(TObject *Sender);
-	void __fastcall N4Click(TObject *Sender);
+	void __fastcall NButtonOpenClick(TObject *Sender);
 	void __fastcall N6Click(TObject *Sender);
 	void __fastcall N7Click(TObject *Sender);
 	void __fastcall N5Click(TObject *Sender);
