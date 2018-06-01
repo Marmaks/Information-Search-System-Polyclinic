@@ -14,19 +14,16 @@ private:
 	string thirdName;
 
 public:
-	Patient();
 
-	//Builder
 	Patient(int, string, string, string, float, float);
 
-	//MainSetter
+
 	void SetPatient(int, string, string, string, float, float);
 
-	//Getters
 	int GetID();
 	float GetHeight();
 	float GetWeight();
 	string GetFirstName();
 	string GetSecondName();
-	string GetThirdName ();
+	string GetThirdName();
 };

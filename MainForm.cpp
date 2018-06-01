@@ -29,8 +29,8 @@ int count_patient = 0;
 int current_id = 0;
 
 int ID = 0;
-int height = 0;
-int weight = 0;
+float height = 0;
+float weight = 0;
 string firstName;
 string secondName;
 string thirdName;
